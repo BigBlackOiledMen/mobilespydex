@@ -1,0 +1,21 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/BigBlackOiledMen/Moveable-kavo/main/Kavo"))()
+local Window = Library.CreateLib("All", "DarkTheme")
+
+local Tab1 = Window:NewTab("Scripts")
+local Tab1Section = Tab1:NewSection("Ports for mobile")
+
+Tab1Section:NewButton("dex", "", function()
+getgenv().Key = "Bash"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3AIY%20Dex",true))()
+
+Tab1Section:NewButton("hydroxide", "", function()
+local owner = "Hosvile"
+local branch = "revision"
+
+local function webImport(file)
+    return loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/%s/MC-Hydroxide/%s/%s.lua"):format(owner, branch, file)), file .. '.lua')()
+end
+
+webImport("init")
+webImport("ui/main")
+end)
